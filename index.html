@@ -551,6 +551,7 @@ footer{
   letter-spacing: 0.05em;
 }
 .form-group input, .form-group select {
+  width: 100%;
   background: rgba(6, 4, 15, 0.5);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -663,9 +664,118 @@ footer{
   animation: pulse 1.5s infinite;
 }
 
+
+/* ─────────────────────────────────────────────
+   REGISTRATION GATE (LOCK BLOCK)
+───────────────────────────────────────────── */
+body.locked {
+  overflow: hidden;
+}
+#registration-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, rgba(13, 8, 29, 0.85) 0%, rgba(6, 4, 15, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s ease, visibility 0.8s;
+  padding: 1.5rem;
+}
+#registration-gate.unlocked {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+  visibility: hidden;
+}
+.gate-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 0 50px rgba(138, 80, 255, 0.25);
+  animation: gateReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@keyframes gateReveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#main-content {
+  transition: filter 0.8s ease, opacity 0.8s ease;
+  width: 100%;
+}
+#main-content.blurred {
+  filter: blur(12px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
 </style>
 </head>
 <body>
+
+<!-- ══ REGISTRATION GATE ══ -->
+<div id="registration-gate">
+  <div class="gate-card">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div class="nav-logo" style="font-size:0.75rem;margin-bottom:0.5rem;justify-content:center;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+        <div>JIND4X <span style="color:var(--violet)">MULTIVERSE</span></div>
+        <div style="font-size:.3rem;color:var(--muted);letter-spacing:.2em;">REGISTRO DE INGRESO</div>
+      </div>
+      <h2 style="font-family:'Cinzel',serif;font-size:1.4rem;color:var(--white);margin-top:0.5rem;">Ficha de Entrada</h2>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem;">Registra tus datos para desbloquear el acceso al servidor y a la web.</p>
+    </div>
+
+    <form id="smp-gate-form" novalidate>
+      <div class="form-group">
+        <label for="gate-ign-input">Nick de Minecraft (IGN)</label>
+        <input type="text" id="gate-ign-input" placeholder="Ej: jinD4x" required>
+        <span class="error-msg">El nick de Minecraft es obligatorio.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="gate-password-input">Contraseña de Acceso</label>
+        <input type="password" id="gate-password-input" placeholder="Ingresa la contraseña del SMP" required>
+        <span class="error-msg" id="gate-pass-error">Contraseña incorrecta.</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group">
+          <label for="gate-platform-input">Plataforma</label>
+          <select id="gate-platform-input" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="Java Edition">Java Edition</option>
+            <option value="Bedrock Edition">Bedrock (Móvil/Consola)</option>
+          </select>
+          <span class="error-msg">Elige plataforma.</span>
+        </div>
+        <div class="form-group">
+          <label for="gate-discord-input">Discord (Opcional)</label>
+          <input type="text" id="gate-discord-input" placeholder="Ej: usuario">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary" id="btn-gate-submit" style="width:100%;margin-top:1.2rem;justify-content:center;padding:0.9rem 1rem;">
+        <span class="btn-text">Ingresar al Multiverso</span>
+        <span class="spinner" id="gate-spinner"></span>
+      </button>
+    </form>
+
+    <div id="gate-status-success" class="reg-status success" style="display:none;margin-top:1rem;">
+      <span class="icon">✓</span> ¡Acceso Concedido! Desbloqueando...
+    </div>
+    <div id="gate-status-error" class="reg-status error" style="display:none;margin-top:1rem;">
+      <span class="icon">✗</span> Error al registrar. Revisa tu conexión.
+    </div>
+  </div>
+</div>
+
+<div id="main-content" class="blurred">
+
 
 <!-- NAV -->
 <nav>
@@ -1106,6 +1216,7 @@ const io  = new IntersectionObserver((entries) => {
 els.forEach(el => io.observe(el));
 </script>
 
+</div>
 <script type="module" src="app.js"></script>
 </body>
 </html>
