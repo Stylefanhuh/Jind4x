@@ -1169,6 +1169,51 @@ img {
   line-height: 1.6;
 }
 
+/* --- Creditos --- */
+.credits-section {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: 2.5rem 2rem;
+}
+
+.credits-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.credits-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--accent-gold);
+  box-shadow: var(--glow-gold);
+}
+
+.credits-text {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.credits-name {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  .credits-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /* --- Responsive --- */
 @media (max-width: 992px) {
   .footer-grid {
