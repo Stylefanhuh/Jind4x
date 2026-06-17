@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jind4x Multiverse - Tienda de Rangos | Servidor Minecraft SMP</title>
+  <meta name="description" content="Consigue tu rango en Jind4x Multiverse, el servidor Minecraft SMP donde cada historia importa. Rangos exclusivos con beneficios reales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Particles background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">J</span>
+        <span class="logo-text">Jind4x Multiverse</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#rangos">Rangos</a></li>
+        <li><a href="#caracteristicas">Por que nosotros</a></li>
+        <li><a href="#reglas">Reglas</a></li>
+        <li><a href="#staff">Equipo</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Servidor Minecraft SMP</div>
+      <h1 class="hero-title">Jind4x Multiverse</h1>
+      <p class="hero-subtitle">Donde cada bloque cuenta una historia y cada jugador deja huella.</p>
+      <p class="hero-description">
+        Acabamos de arrancar hace un par de semanas y ya somos un grupo fijo que se conecta a diario.
+        Aqui la gente coopera, comercia y a veces se traiciona, pero siempre con respeto.
+        Si buscas un SMP fresco con gente real, llegaste al lugar correcto.
+      </p>
+      <div class="hero-actions">
+        <a href="#rangos" class="btn btn-primary">Ver los rangos</a>
+        <a href="#caracteristicas" class="btn btn-outline">Conocer mas</a>
+      </div>
+      <div class="hero-ip">
+        <span class="ip-label">IP del servidor:</span>
+        <button class="ip-value" id="copy-ip" data-ip="va104.holy.gg:19524">
+          va104.holy.gg:19524
+          <span class="ip-copied" id="ip-copied">Copiada</span>
+        </button>
+      </div>
+      <div class="hero-status">
+        <div class="server-status-pill">
+          <span class="status-dot" id="server-status-dot"></span>
+          <span class="status-text" id="server-status-text">Verificando servidor...</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- Stats bar -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number" data-target="27">0</span>
+        <span class="stat-label">Jugadores activos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="2">0</span>
+        <span class="stat-label">Semanas online</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="99">0</span>
+        <span class="stat-label">Uptime %</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="1">0</span>
+        <span class="stat-label">Temporada</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ranks Section -->
+  <section class="ranks-section" id="rangos">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Tienda</span>
+        <h2 class="section-title">Elige tu rango</h2>
+        <p class="section-description">
+          Mira, todos los rangos son de prueba por ahora. Estamos ajustando los beneficios segun lo que la comunidad nos pide, 
+          asi que puede que cambie alguna cosa menor. Lo que si te aseguramos es que lo que compres hoy, lo conservas. 
+          Nada de resets sorpresa ni letras chiquitas.
+        </p>
+      </div>
+      <div class="ranks-grid">
+
+        <!-- Rank 1: Semi-Dios -->
+        <div class="rank-card" data-rank="aldeano">
+          <div class="rank-ribbon">En progreso</div>
+          <div class="rank-header rank-header--aldeano">
+            <div class="rank-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3 class="rank-name">Semi-Dios</h3>
+            <div class="rank-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">4.99</span>
+              <span class="price-period">USD</span>
+            </div>
+          </div>
+          <div class="rank-body">
+            <p class="rank-description">
+              Para el que quiere apoyar sin complicarse la vida. Un par de cositas utiles y el tag en el chat
+              para que la gente sepa que eres de los que aportan.
+            </p>
+            <ul class="rank-features">
+              <li>
+                <span class="feature-check"></span>
+                Prefijo [Semi-Dios] en el chat
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                2 homes extra (total 4)
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Kit basico cada 24h
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Acceso al /hat
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Colores en el chat
+              </li>
+            </ul>
+          </div>
+          <div class="rank-footer">
+            <!-- Remplaza el '#' con el enlace directo al paquete en tu tienda Tebex -->
+            <a href="https://virguezmc.tebex.io/" target="_blank" class="btn btn-rank btn-rank--aldeano">Obtener Semi-Dios</a>
+          </div>
+        </div>
+
+        <!-- Rank 2: Dios-Débil -->
+        <div class="rank-card rank-card--featured" data-rank="guerrero">
+          <div class="rank-ribbon">En progreso</div>
+          <div class="rank-header rank-header--guerrero">
+            <div class="rank-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.5 2L18 6l-4 4 6 6-8 8-6-6 4-4-6-6z"/>
+              </svg>
+            </div>
+            <h3 class="rank-name">Dios-Débil</h3>
+            <div class="rank-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">9.99</span>
+              <span class="price-period">USD</span>
+            </div>
+          </div>
+          <div class="rank-body">
+            <p class="rank-description">
+              El favorito de la comunidad y con razon. Tiene lo justo para que sientas la diferencia 
+              sin romper el balance del server. Honestamente, es el que mejor relacion calidad-precio tiene.
+            </p>
+            <ul class="rank-features">
+              <li>
+                <span class="feature-check"></span>
+                Todo lo del Semi-Dios incluido
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Prefijo [Dios-Débil] animado
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                5 homes extra (total 7)
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Kit intermedio cada 12h
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                /craft y /enderchest
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Particulas personalizadas
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Prioridad en cola del servidor
+              </li>
+            </ul>
+          </div>
+          <div class="rank-footer">
+            <!-- Remplaza el '#' con el enlace directo al paquete en tu tienda Tebex -->
+            <a href="https://virguezmc.tebex.io/" target="_blank" class="btn btn-rank btn-rank--guerrero">Obtener Dios-Débil</a>
+          </div>
+        </div>
+
+        <!-- Rank 3: Dios-Olimpo -->
+        <div class="rank-card" data-rank="leyenda">
+          <div class="rank-ribbon">En progreso</div>
+          <div class="rank-header rank-header--leyenda">
+            <div class="rank-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="rank-name">Dios-Olimpo</h3>
+            <div class="rank-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">19.99</span>
+              <span class="price-period">USD</span>
+            </div>
+          </div>
+          <div class="rank-body">
+            <p class="rank-description">
+              El rango de los que de verdad quieren ir a tope. No te da ventaja en PvP ni nada pay-to-win, 
+              pero las comodidades son brutales. Vuelo en el lobby, mascotas, y un par de sorpresas 
+              que vamos agregando cada mes.
+            </p>
+            <ul class="rank-features">
+              <li>
+                <span class="feature-check"></span>
+                Todo lo del Dios-Débil incluido
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Prefijo [Dios-Olimpo] con efecto
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Homes ilimitados
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Kit legendario cada 6h
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                /fly en lobby y hub
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Mascotas exclusivas
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Nick personalizable con colores
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Canal exclusivo en Discord
+              </li>
+            </ul>
+          </div>
+          <div class="rank-footer">
+            <!-- Remplaza el '#' con el enlace directo al paquete en tu tienda Tebex -->
+            <a href="https://virguezmc.tebex.io/" target="_blank" class="btn btn-rank btn-rank--leyenda">Obtener Dios-Olimpo</a>
+          </div>
+        </div>
+
+        <!-- Rank 4: Zeus -->
+        <div class="rank-card" data-rank="titan">
+          <div class="rank-ribbon">En progreso</div>
+          <div class="rank-header rank-header--titan">
+            <div class="rank-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 4l3 12h14l3-12-6 7-4-8-4 8z"/>
+                <path d="M5 16l-1 4h16l-1-4"/>
+              </svg>
+            </div>
+            <h3 class="rank-name">Zeus</h3>
+            <div class="rank-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">34.99</span>
+              <span class="price-period">USD</span>
+            </div>
+          </div>
+          <div class="rank-body">
+            <p class="rank-description">
+              El maximo nivel. Este rango es para los que llevan meses con nosotros y quieren el paquete completo. 
+              Incluye absolutamente todo y ademas tienes voz directa con el staff para sugerir cambios. 
+              Eres parte del nucleo del server.
+            </p>
+            <ul class="rank-features">
+              <li>
+                <span class="feature-check"></span>
+                Todo lo de Dios-Olimpo incluido
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Prefijo [Zeus] legendario
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Acceso beta a nuevos contenidos
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                /feed y /heal (cooldown 1h)
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Creacion de warps personales
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Efectos de muerte personalizados
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Rol Zeus en Discord + canal privado
+              </li>
+              <li>
+                <span class="feature-check"></span>
+                Voto prioritario en decisiones del server
+              </li>
+            </ul>
+          </div>
+          <div class="rank-footer">
+            <!-- Remplaza el '#' con el enlace directo al paquete en tu tienda Tebex -->
+            <a href="https://virguezmc.tebex.io/" target="_blank" class="btn btn-rank btn-rank--titan">Obtener Zeus</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="ranks-disclaimer">
+        Ojo: estos rangos estan en fase de prueba. Puede que ajustemos algun beneficio menor basandonos en el feedback, 
+        pero siempre para mejorar. Si algo cambia drasticamente, te avisamos y te damos opciones. Transparencia ante todo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="caracteristicas">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">El servidor</span>
+        <h2 class="section-title">Modalidades</h2>
+        <p class="section-description">
+          Elige tu forma de jugar en Jind4x Multiverse. Diferentes mundos para diferentes dioses.
+        </p>
+      </div>
+
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Anárquico</h3>
+          <p class="feature-text">
+            Caos total. Sin reglas, sin protecciones. Sobrevive como puedas, roba, destruye y domina el mundo anárquico.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Survival</h3>
+          <p class="feature-text">
+            La experiencia clásica de supervivencia. Construye tu base, forma alianzas, comercia y disfruta del SMP con la comunidad.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon feature-icon--purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">BoxPvP <span style="font-size: 0.6em; color: #fbbf24;">(Próximamente)</span></h3>
+          <p class="feature-text">
+            Aún no se abre, pero prepárate para la arena más intensa. Consigue el mejor equipamiento y demuestra quién es el verdadero Dios.
+          </p>
+        </div>
+      </div>
+</div>
+  </section>
+
+  <!-- Staff Section -->
+  <section class="staff-section" id="staff">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">El Equipo</span>
+        <h2 class="section-title">Staff de Jind4x Multiverse</h2>
+        <p class="section-description">
+          Los que estamos detrás del servidor manteniendo todo en orden, configurando plugins y asegurando que te diviertas sin problemas.
+        </p>
+      </div>
+
+      
+      <div class="staff-grid">
+        <div class="staff-card" data-role="owner">
+          <div class="staff-avatar-wrapper">
+            <img src="https://mc-heads.net/avatar/Tryhard/100" alt="Jind4x" class="staff-avatar staff-avatar--2d" loading="lazy">
+            <img src="https://mc-heads.net/player/Tryhard/100" alt="Jind4x body" class="staff-avatar staff-avatar--3d" loading="lazy">
+          </div>
+          <h3 class="staff-name">Jind4x</h3>
+          <span class="staff-role staff-role--owner">Dueño / Fundador</span>
+          <p class="staff-bio">Fundador del servidor. El Dios supremo que mantiene el multiverso funcionando.</p>
+        </div>
+
+        <div class="staff-card" data-role="developer">
+          <div class="staff-avatar-wrapper">
+            <img src="https://mc-heads.net/avatar/Anonymous/100" alt="SrSocram" class="staff-avatar staff-avatar--2d" loading="lazy">
+            <img src="https://mc-heads.net/player/Anonymous/100" alt="SrSocram body" class="staff-avatar staff-avatar--3d" loading="lazy">
+          </div>
+          <h3 class="staff-name">SrSocram</h3>
+          <span class="staff-role staff-role--owner">Owner Dev</span>
+          <p class="staff-bio">El creador de sistemas. Se encarga de la gestión de código y plugins avanzados.</p>
+        </div>
+
+        <div class="staff-card" data-role="developer">
+          <div class="staff-avatar-wrapper">
+            <img src="https://mc-heads.net/avatar/cute/100" alt="CamilaFKRM" class="staff-avatar staff-avatar--2d" loading="lazy">
+            <img src="https://mc-heads.net/player/cute/100" alt="CamilaFKRM body" class="staff-avatar staff-avatar--3d" loading="lazy">
+          </div>
+          <h3 class="staff-name">CamilaFKRM</h3>
+          <span class="staff-role staff-role--developer">Developer</span>
+          <p class="staff-bio">La dev que le mete demasiado empeño a todo. Hace magia con el código para que disfrutes sin lag.</p>
+        </div>
+
+        <div class="staff-card" data-role="admin">
+          <div class="staff-avatar-wrapper">
+            <img src="https://mc-heads.net/avatar/Excube/100" alt="Excube" class="staff-avatar staff-avatar--2d" loading="lazy">
+            <img src="https://mc-heads.net/player/Excube/100" alt="Excube body" class="staff-avatar staff-avatar--3d" loading="lazy">
+          </div>
+          <h3 class="staff-name">Excube</h3>
+          <span class="staff-role staff-role--admin">Administrador</span>
+          <p class="staff-bio">Encargado de mantener el orden en el multiverso y ayudar a los mortales.</p>
+        </div>
+        
+        <div class="staff-card" data-role="admin">
+          <div class="staff-avatar-wrapper">
+            <img src="https://mc-heads.net/avatar/Jac_XD/100" alt="Jac_XD" class="staff-avatar staff-avatar--2d" loading="lazy">
+            <img src="https://mc-heads.net/player/Jac_XD/100" alt="Jac_XD body" class="staff-avatar staff-avatar--3d" loading="lazy">
+          </div>
+          <h3 class="staff-name">Jac_XD</h3>
+          <span class="staff-role staff-role--admin">Administrador</span>
+          <p class="staff-bio">Modera la comunidad y organiza eventos épicos para todos.</p>
+        </div>
+      </div>
+</div>
+  </section>
+
+  <!-- Rules Section -->
+  <section class="rules-section" id="reglas">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Normas</span>
+        <h2 class="section-title">Reglas de Jind4x Multiverse</h2>
+        <p class="section-description">
+          Somos un SMP **Semi-Anárquico**. Aquí la supervivencia es ruda: se permite el combate y el grifeo, pero con reglas claras para que la competencia sea justa.
+        </p>
+      </div>
+
+      <div class="rules-grid">
+        <!-- Regla 1: No Hacks -->
+        <div class="rule-card">
+          <div class="rule-num">01</div>
+          <h3 class="rule-title">Cero Hacks y Cheats</h3>
+          <p class="rule-text">Prohibido el uso de clientes modificados, hacks, x-ray, exploits o cualquier ventaja externa. Queremos un juego 100% limpio y competitivo.</p>
+        </div>
+
+        <!-- Regla 2: Semi-Anarquía -->
+        <div class="rule-card">
+          <div class="rule-num">02</div>
+          <h3 class="rule-title">Griefing y PVP Permitidos</h3>
+          <p class="rule-text">Puedes matar a otros jugadores y destruir o saquear sus construcciones en el mundo. El combate y la rivalidad son parte del juego.</p>
+        </div>
+
+        <!-- Regla 3: Usa Protecciones -->
+        <div class="rule-card">
+          <div class="rule-num">03</div>
+          <h3 class="rule-title">Bases sin Protección</h3>
+          <p class="rule-text">El grifeo está permitido **únicamente en bases que no estén protegidas**. Es tu responsabilidad usar protecciones; si no proteges tu base y te roban, es legal.</p>
+        </div>
+
+        <!-- Regla 4: Respeto en Comunidad -->
+        <div class="rule-card">
+          <div class="rule-num">04</div>
+          <h3 class="rule-title">Respeto fuera del juego</h3>
+          <p class="rule-text">La guerra ocurre dentro del servidor. El acoso personal, la toxicidad extrema o la discriminación en el chat global o en Discord no serán tolerados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Dudas</span>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-description">
+          Las dudas que nos llegan mas seguido. Si la tuya no esta aqui, pregunta en Discord sin drama.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item" id="faq-item-1">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+            <span>Que significa que los rangos son de "test"?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer" id="faq-answer-1">
+            <p>
+              Basicamente estamos probando que beneficios funcionan mejor sin desbalancear el juego. 
+              Puede que agreguemos algun perk nuevo o ajustemos un cooldown, pero nunca te vamos a quitar algo 
+              que ya compraste sin darte una alternativa igual o mejor. Si en algun momento un rango cambia mucho, 
+              te contactamos directamente.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-item-2">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+            <span>Es pay-to-win?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer" id="faq-answer-2">
+            <p>
+              No, y esto lo decimos sin rodeos. Los rangos te dan comodidades como homes extra, 
+              cosmeticos y comandos de calidad de vida. Nada que te haga ganar peleas o conseguir recursos mas rapido que otros. 
+              Si algun dia metemos algo que se sienta pay-to-win, la comunidad nos lo va a decir y lo cambiamos.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-item-3">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+            <span>Puedo pedir reembolso?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer" id="faq-answer-3">
+            <p>
+              Dentro de los primeros 7 dias si no estas conforme, te devolvemos el dinero sin preguntas. 
+              Despues de eso, evaluamos caso por caso. No queremos que nadie se sienta estafado, 
+              asi que si tienes un problema real, hablalo con nosotros por Discord y lo resolvemos.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-item-4">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+            <span>En que version puedo entrar?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer" id="faq-answer-4">
+            <p>
+              El server corre en la ultima version estable de Minecraft Java Edition. 
+              Actualmente soportamos desde la 1.20 hasta la 1.21.x. Bedrock por ahora no, 
+              pero es algo que estamos evaluando para el futuro dependiendo de la demanda.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq-item-5">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+            <span>Cada cuanto hay resets?</span>
+            <span class="faq-toggle"></span>
+          </button>
+          <div class="faq-answer" id="faq-answer-5">
+            <p>
+              Apenas estamos en la primera temporada asi que no hay planes de reset pronto.
+              Cuando llegue el momento lo avisamos con tiempo de sobra y hacemos un evento de despedida.
+              Los rangos comprados se mantienen entre temporadas, eso no se toca nunca.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Tu saga empieza aqui</h2>
+      <p class="cta-text">
+        No te vamos a meter presion. Entra, prueba el server, conoce a la gente, 
+        y si te convence lo que ves, ya sabes donde estan los rangos. 
+        Al final del dia, lo importante es que la pases bien.
+      </p>
+      <div class="cta-actions">
+        <a href="#rangos" class="btn btn-primary btn-lg">Ver rangos disponibles</a>
+      </div>
+      <div class="cta-ip">
+          <span>va104.holy.gg:19524</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">J</span>
+            <span class="logo-text">Jind4x Multiverse</span>
+          </div>
+          <p class="footer-tagline">
+            Un servidor Minecraft SMP nuevo, hecho por jugadores, para jugadores. Sin corporaciones detras, sin agendas ocultas.
+          </p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Navegacion</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#rangos">Rangos</a></li>
+            <li><a href="#caracteristicas">Caracteristicas</a></li>
+            <li><a href="#staff">Equipo</a></li>
+            <li><a href="#faq">Preguntas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terminos de servicio</a></li>
+            <li><a href="#">Politica de reembolso</a></li>
+            <li><a href="#">Reglas del server</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Comunidad</h4>
+          <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Jind4x Multiverse no esta afiliado con Mojang Studios ni Microsoft. Minecraft es una marca registrada de Mojang Studios.</p>
+        <p>2024 - 2026 Jind4x Multiverse. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=1.2"></script>
+</body>
+</html>
